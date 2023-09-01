@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interface do Site</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<title>Interface do Site</title>
+
 <style>
 
-  body {
+  body
+  {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
   }
-  .container {
+
+  .container
+  {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,28 +32,38 @@
     border-left: 1px solid #e0e0e0; /* Adiciona o risco separador */
     padding-left: 10px; /* Espaçamento do risco */
   }
-  .header {
+
+  .header
+  {
     margin-bottom: 20px;
     text-align: center;
   }
-  .header img {
+
+  .header img
+  {
     max-width: 100%;
     height: auto;
   }
-  .container h3 {
+
+  .container h3
+  {
     font-size: 24px; /* Tamanho aumentado */
     font-weight: bold; /* Mais encorpado */
     margin-bottom: 10px;
     border-bottom: 2px solid #e0e0e0; /* Linha separadora */
     padding-bottom: 5px; /* Espaçamento abaixo da linha */
   }
-  .category-wrapper {
+  
+  .category-wrapper
+  {
     display: flex;
     flex-direction: column; /* Alterado para empilhar verticalmente */
     align-items: center; /* Centraliza horizontalmente */
     width: 100%;
   }
-  .category {
+
+  .category
+  {
     text-align: center;
     margin: 30px;
     background-color:  #3498db;
@@ -57,7 +73,9 @@
     overflow: hidden;
     border: 1px solid #e0e0e0; /* Adiciona a borda cinza claro */
   }
-  .category-title {
+
+  .category-title
+  {
     font-size: 18px;
     color: #333;
     cursor: pointer;
@@ -66,16 +84,22 @@
     justify-content: space-between;
     align-items: center;
   }
-  .category-content {
+  .category-content
+  {
     max-height: 0;
     overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; /* Adiciona quebra de linha para os itens */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
   }
 
-  .category-content.expanded {
+  .category-content.expanded
+  {
   animation: expandAnimation 2.5s ease-in-out forwards;
-}
+  }
 
-@keyframes expandAnimation {
+@keyframes expandAnimation
+{
   from {
     max-height: 0;
   }
@@ -84,22 +108,23 @@
   }
 }
 
-  .category.active .category-content {
+  .category.active .category-content
+  {
     max-height: 500px; /* Ou o valor necessário */
     padding: 10px;
   }
-  .icon {
-    font-size: 36px;
-    color: #3498db;
-  }
-  .category-subtitle {
+
+  .category-subtitle
+  {
     font-size: 14px;
     color: #ffffff;
     background-color:  #3498db;
     padding: 7px 12px;
     border-radius: 8px;
   }
-  .footer {
+
+  .footer
+  {
     background-color: #3498db;
     color: #ffffff;
     padding: 20px;
@@ -107,45 +132,179 @@
     
   }
 
-  .footer p {
+  .footer p
+  {
     margin: 10px 0;
   }
+
+  .square
+  {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombreamento adicionado */
+  }
+
+  .square:hover
+  {
+    transform: scale(1.05);
+  }
+
+  .gray-bar
+  {
+    width: 100%;
+    min-height: 33px; /* Tamanho mínimo da barra cinza */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+    z-index: 1; /* Colocar a barra cinza acima do ícone */
+  }
+
+  .icon
+  {
+    font-size: 60px; /* Tamanho do ícone */
+    color: #3498db;
+    text-align: center; /* Centralizar o ícone */
+    position: relative;
+    z-index: 0; /* Colocar o ícone abaixo da barra cinza */
+    line-height: 1; /* Centralizar verticalmente o ícone */
+    margin-top: 70px; /* Ajustar espaçamento acima do ícone */
+  }
+
+  .spacer {
+  height: 0; /* Altura inicial zero */
+  transition: height 0.5s ease-in-out; /* Adiciona uma transição suave de altura */
+}
+
+.category-content a {
+  margin: 5px; /* Define o espaçamento desejado (aqui, 5px) */
+}
+
 </style>
+
 </head>
+
 <body>
   <div class="container">
+
     <div class="header">
-      <img src="logo.png" alt="Logo do Site">
+      <img src="logoven.jpg" alt="Logo do Site">
     </div>
+    
     <h3>PORTAL DO EMPREENDEDOR</h3>
+
     <div class="category-wrapper">
+
       <div class="category">
         <div class="category-title">
           <div class="category-subtitle">ATENDIMENTO WHATSAPP</div>
         </div>
         <div class="category-content">
-          <a href="https://api.whatsapp.com/send?phone=555121830243">ATENDIMENTO WHATSAPP</a> 
+          <a href="https://api.whatsapp.com/send?phone=555121830243">
+            <div class="square">
+              <div class="gray-bar">Atendimento whatsapp</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
         </div>
       </div>
-      <!-- Aqui você pode duplicar o código do dropdown e ajustar os links e textos -->
+
       <div class="category">
         <div class="category-title">
           <div class="category-subtitle">PESQUISA DE SATISFAÇÃO</div>
         </div>
         <div class="category-content">
-          <a href="GoogleDocs">PESQUISA DE SATISFAÇÃO</a>
+          <a href="GoogleDocs">
+            <div class="square">
+              <div class="gray-bar">Pesquisa de satisfação</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
         </div>
       </div>
+
       <div class="category">
         <div class="category-title">
           <div class="category-subtitle">SERVIÇOS PARA MEI</div>
         </div>
         <div class="category-content">
-          <a href="link_para_opcao_4">GUIA DO MEI</a>
-          <a href="http://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/dasnsimei.app/Default.aspx">DECLARAÇÃO DE FATURAMENTO ANUAL</a>
-          <a href="http://www8.receita.fazenda.gov.br/SimplesNacional/Servicos/Grupo.aspx?grp=19">GUIA PARCELAMENTO</a>
-          <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/emissao-de-comprovante-ccmei">EMISSÃO CCMEI</a>
-          <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/perguntas-frequentes">PERGUNTAS FREQUENTES</a>
+          <a href="">
+            <div class="square">
+              <div class="gray-bar">GUIA DO MEI</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="http://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/dasnsimei.app/Default.aspx">
+            <div class="square">
+              <div class="gray-bar">DECLARAÇÃO DE FATURAMENTO ANUAL</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="http://www8.receita.fazenda.gov.br/SimplesNacional/Servicos/Grupo.aspx?grp=19">
+            <div class="square">
+              <div class="gray-bar">GUIA PARCELAMENTO</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/emissao-de-comprovante-ccmei">
+            <div class="square">
+              <div class="gray-bar">EMISSÃO CCMEI</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/perguntas-frequentes">
+            <div class="square">
+              <div class="gray-bar">PERGUNTAS FREQUENTES</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=555121830243">
+            <div class="square">
+              <div class="gray-bar">Atendimento whatsapp</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=555121830243">
+            <div class="square">
+              <div class="gray-bar">Atendimento whatsapp</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=555121830243">
+            <div class="square">
+              <div class="gray-bar">Atendimento whatsapp</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=555121830243">
+            <div class="square">
+              <div class="gray-bar">Atendimento whatsapp</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=555121830243">
+            <div class="square">
+              <div class="gray-bar">Atendimento whatsapp</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=555121830243">
+            <div class="square">
+              <div class="gray-bar">Atendimento whatsapp</div>
+              <div class="icon"><i class="fas fa-globe"></i></div>
+            </div>
+          </a>
+          <a href="link_para_opcao_4"></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
           <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/quero-ser-mei/atividades-permitidas">OCUPAÇÕES PERMITIDAS</a>
           <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/certidoes-e-comprovantes">CERTIDÕES E COMPROVANTES</a>
           <a href="https://grp.venancioaires.rs.gov.br/grp/acessoexterno/credencialAcessoExterno.faces ">EMISSÃO DE NOTAS DE SERVIÇO</a>
@@ -155,6 +314,7 @@
           <a href="link_para_opcao_4">TABELA ITEM DA LISTA DE SERVIÇOS</a>
         </div>
       </div>
+
       <div class="category">
         <div class="category-title">
           <div class="category-subtitle">TUDO FÁCIL EMPRESAS RS</div>
@@ -162,44 +322,60 @@
         <div class="category-content">
           <a href="https://tudofacilempresas.rs.gov.br/quero-abrir-empresa">TUDO FÁCIL EMPRESAS RS</a>
         </div>  
-    </div>
-    <div class="category">
+      </div>
+
+      <div class="category">
       <div class="category-title">
         <div class="category-subtitle">MEI INSCRIÇÃO / ALTERAÇÃO / LICENCIMENTO</div>
       </div>
       <div class="category-content">
         <a href="https://tudofacilempresas.rs.gov.br/quero-abrir-empresa">TUDO FÁCIL EMPRESAS RS</a>
       </div>
-  </div>
-  
+      </div>
 
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  
   <script>
     const categories = document.querySelectorAll('.category');
-  
-    categories.forEach(category => {
-      const title = category.querySelector('.category-title');
-      const content = category.querySelector('.category-content');
-  
-      title.addEventListener('click', () => {
-        categories.forEach(c => {
-          if (c !== category) {
-            c.classList.remove('active');
-            c.querySelector('.category-content').classList.remove('expanded');
-          }
-        });
-  
-        category.classList.toggle('active');
-        if (category.classList.contains('active')) {
-          content.classList.add('expanded');
-        } else {
-          content.classList.remove('expanded');
+const spacer = document.querySelector('.spacer');
+let pageHeight = 0; // Variável para rastrear a altura da página
+
+categories.forEach(category => {
+  const title = category.querySelector('.category-title');
+  const content = category.querySelector('.category-content');
+  let isActive = false; // Novo estado para controlar ativação
+
+  title.addEventListener('click', () => {
+    if (isActive) {
+      content.classList.remove('expanded');
+      pageHeight -= content.scrollHeight + 20; // Subtrai a altura do conteúdo expandido da altura da página
+      spacer.style.height = pageHeight + 'px'; // Atualiza a altura do espaço vazio
+    } else {
+      // Recolher outros conteúdos ativos antes de expandir este
+      categories.forEach(c => {
+        if (c !== category && c.classList.contains('active')) {
+          c.classList.remove('active');
+          c.querySelector('.category-content').classList.remove('expanded');
+          pageHeight -= c.querySelector('.category-content').scrollHeight + 20; // Subtrai a altura do conteúdo recolhido
         }
       });
-    });
+
+      content.classList.add('expanded');
+      pageHeight += content.scrollHeight + 20; // Adiciona a altura do conteúdo expandido à altura da página
+      spacer.style.height = pageHeight + 'px'; // Atualiza a altura do espaço vazio
+    }
+
+    isActive = !isActive; // Alterna o estado
+  });
+});
+
   </script>
   
   <div class="footer">
-    <img src="brasao.png" alt="brasao de venâncio aires">
+    <img src="brasao.jpg" alt="brasao de venâncio aires">
     <p>Prefeitura Municipal de Venâncio Aires</p>
     <p>Telefone (51) 2183-0205 | (51) 3983-1000 | 0800 8080 141 (Ligação Gratuita)</p>
     <p>Rua Osvaldo Aranha, 634</p>
